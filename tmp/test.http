@@ -1,0 +1,12 @@
+GET http://my-admin/api/user/1
+Accept: application/json
+Authorization: Bearer aswe3456dgf43sfsqwi7
+
+###
+
+POST http://my-admin/api/user/1
+Content-Type: application/x-www-form-urlencoded
+
+api_token=aswe3456dgf43sfsqwi7
+
+###

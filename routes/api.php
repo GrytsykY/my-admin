@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::middleware('api_auth')->match(['get','post'],'/user/{id}', function (Request $request, $id){
+    $user = \App\Models\User::find($id);
+    if ($user) return $user;
+    return response('',404);
 });
